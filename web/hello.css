@@ -1,118 +1,15 @@
-
-div {
-    /*        border: 1px solid white;*/
-}
-
 body {
     margin-top: 0px;
-    background-image: url("photos/darkwood_1.jpg");
     background-repeat: repeat-y;
     background-position: center top;
-}
-
-.fb-page, 
-.fb-page span, 
-.fb-page span iframe[style] { 
-    width: 100% !important; 
-}
-
-.main-block {
-    min-width: 733px !important;
-}
-
-.nav {
-     position: relative;
-}
-
-.nav .col-md-12 {
-    background: rgba(55, 55, 55, 0.5);
-    box-shadow: 2px 2px 5px black;
-}
-
-.panel-heading {
-    background-image: url(photos/greenwood_1.jpg);
-    color: white !important;
-}
-
-#hours .panel-body .row .col-xs-8 {
-    font-weight: 600;
-}
-
-gallery-main .img-thumbnail,
-gallery-main .img-responsive {
-    box-shadow: 2px 2px 5px black;
-    height: auto;
-}
-
-.img-thumbnail {
-    margin: 3px;
-    max-width: 120px !important;
-}
-
-.img-responsive {
-    max-height: 100%;
-}
-
-.center-text {
-    text-align: center;
-}
-
-.right-text {
-    text-align: right;
-    text-shadow: 1px 1px 3px black;
-    font-size: 18px;
-}
-
-#reviews {
-    max-height: 530px;
-}
-
-#gallery-main {
-    margin-right: -10px;
-    height: 700px;
-}
-
-#gallery-bin {
-    width: 160px;
-    margin-left: -15px;
-    height: 700px;
-}
-
-#title1,
-#title2 {
-    letter-spacing: 5px;
-    text-shadow: 2px 2px 3px black;
-}
-
-#title1 {
-    font-size: 100px;
-    font-family: myTitleFont1;
-    margin: -20px 0px -30px 0px;
-    /*    height: 100px;*/
-}
-
-#left .row {
-    padding: 0px;
-    margin: 20px 5px 20px 5px;
-}
-
-#left {
-    height: 700px;
-    background-color: black;
-    background-image: url("photos/greenwood_1.jpg");
-    background-repeat: no-repeat;
-    color: white;
-    box-shadow: 2px 2px 5px black;
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
-
-#right {
-    padding: 20px;
+    width: 200px;
 }
 
 #header {
-    background-image: url("photos/paintwall_4.jpg");
+    background: -webkit-linear-gradient(#334c33, #1f2e1f);
+    background: -o-linear-gradient(#334c33, #1f2e1f);
+    background: -moz-linear-gradient(#334c33, #1f2e1f); 
+    background: linear-gradient(#334c33, #1f2e1f); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -123,17 +20,13 @@ gallery-main .img-responsive {
 }
 
 #center {
-    /*    background-color:rgba(236, 236, 236, 0.55);*/
+    background-color:rgba(236, 236, 236, 0.55);
     background-color: rgba(255, 255, 255, 0.65);
     border: 1px solid #1f2e1f;
+    padding: 10px;
     box-shadow: 5px 5px 10px black;
-    height: auto;
+    height: 100px;
     overflow: hidden;
-}
-
-.header-right {
-    background-color: rgba(55, 55, 55, 0.85);
-    box-shadow: 0px 5px 10px black;
 }
 
 #footer {
@@ -142,8 +35,6 @@ gallery-main .img-responsive {
     background: -moz-linear-gradient(#1f2e1f, #334c33); 
     background: linear-gradient(#1f2e1f, #334c33); 
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     box-shadow: 5px 5px 10px black;
     margin-bottom: 10px;
     color: white;
