@@ -1,0 +1,39 @@
+body {
+    margin-top: 0px;
+    background-repeat: repeat-y;
+    background-position: center top;
+}
+
+#header {
+    font-size: 40px;
+    background-color: beige;
+}
+
+#center {
+    font-size: 30px;
+    background-color: burlywood;
+}
+
+#footer {
+    font-size: 20px;
+    background-color: darksalmon;
+}
+
+#header:hover, #center:hover, #footer:hover {
+    font-weight:bold;
+}
+
+
+a:link,
+a:visited {
+    color: #c2efc2;
+}
+
+a:hover,
+a:active {
+    color: #99e6ff;
+}
+
+p {
+    text-indent: 30px;
+}

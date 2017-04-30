@@ -1,0 +1,41 @@
+body {
+    margin-top: 0px;
+    background-position: center top;
+}
+
+div {
+/*    border: 2px solid black !important;*/
+}
+
+#header {
+    font-size: 40px;
+    background-color: beige;
+}
+
+#center {
+    min-height: 200px;
+    font-size: 30px;
+    background-color: burlywood;
+}
+
+#selected {
+    background-color: burlywood;
+    border-radius: 10px 10px 0px 0px;       
+}
+
+#unselected {
+    background-color:bisque;
+    border-radius: 10px 10px 0px 0px;       
+}
+
+#nav {
+    margin-top: 10px;
+}
+
+#nav div div{
+    margin: 0px 2px 0px 2px;
+}
+
+p {
+    text-indent: 30px;
+}
