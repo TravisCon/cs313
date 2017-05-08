@@ -1,0 +1,93 @@
+@font-face {
+    font-family: title1;
+    src: url(../fonts/OptimusPrinceps.ttf);
+}
+
+#colors {
+    color: #96858F;
+    /*purple*/
+    color: #6D7993;
+    /*blue*/
+    color: #576177;
+    /*dark blue*/
+    color: #9099A2;
+    /*grey*/
+    color: #D5D5D5;
+    /*paper*/
+}
+
+.container {
+    background: #D5D5D5;
+    background: -webkit-linear-gradient(#96858F, #9099A2);
+    background: -o-linear-gradient(#96858F, #9099A2);
+    background: -moz-linear-gradient(#96858F, #9099A2);
+    background: linear-gradient(#96858F, #9099A2);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    border-radius: 0px 0px 5px 5px;
+}
+
+#header {
+    background: #6D7993;
+    background: -webkit-linear-gradient(#576177, #6D7993);
+    background: -o-linear-gradient(#576177, #6D7993);
+    background: -moz-linear-gradient(#576177, #6D7993);
+    background: linear-gradient(#576177, #6D7993);
+    /*Other Items*/
+    color: white;
+    border-radius: 5px 5px 0px 0px;
+}
+
+#header img {
+    margin: 5px;
+}
+
+#center {
+    background-color: #6D7993;
+    border: 4px solid #6D7993;
+    border-top: none;
+    font-size: 18px;
+}
+
+#center-middle {
+    background-color: #D5D5D5;
+    border-radius: 5px;
+}
+
+#footer {
+    min-height: 10px;
+    background: #6D7993;
+    background: -webkit-linear-gradient(#6D7993, #576177);
+    background: -o-linear-gradient(#6D7993, #576177);
+    background: -moz-linear-gradient(#6D7993, #576177);
+    background: linear-gradient(#6D7993, #576177);
+    /*Other Items*/
+    color: white;
+    border-radius: 0px 0px 5px 5px;
+    margin-bottom: 40px;
+}
+
+#title {
+    font-family: title1;
+    font-size: 72px;
+}
+
+#subtitle {
+    font-family: title1;
+    font-size: 20px;
+}
+
+html, body{
+    height: 100%;
+    min-height: 100%;
+}
+
+p {
+    text-indent: 30px;
+}
+
+div {
+    /*    /*    border: 1px solid black;*/
+    border: 1px solid black;*/
+}

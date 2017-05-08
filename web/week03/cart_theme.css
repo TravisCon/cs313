@@ -1,0 +1,140 @@
+@font-face {
+    font-family: title1;
+    src: url(../fonts/white_wood.otf)
+}
+@font-face {
+    font-family: plant;
+    src: url(../fonts/FlowersOfDestiny.ttf)
+}
+
+#colors {
+/*    http://paletton.com/palette.php?uid=52u0x0kcglL4Zvw8Eq6eXhmkwen*/
+    
+}
+
+.container {
+    background-color: #B3CBC0;
+    background-image: url("../photos/tree_hill.png");/*backup*/
+    background-image: url("../photos/tree_hill.png"), linear-gradient(#6B937E , #96B2A3 70%);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+#body {
+    box-shadow: 0px 3px 15px black;
+    background: #A7AB6A;
+}
+
+#header {
+    background-image: url(../photos/leaf1.jpeg); /*backup*/
+    background: linear-gradient(rgba(132,158,98,0) 70%, rgba(132,158,98,1)), url(../photos/leaf1.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /*Other Items*/
+    color: white;
+}
+
+#center {
+    background-color: #849E62;
+    padding: 4px;
+    font-size: 18px;
+}
+
+#center-middle {
+/*    box-shadow: 0px 0px 8px black;*/
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #e2e9e5;
+    border-radius: 5px;
+}
+
+#footer {
+    min-height: 30px;
+    background: #849E62;/*backup*/
+    background: linear-gradient(#849E62, #6D7129);
+    /*Other Items*/
+    color: white;
+}
+
+#item, #item_summary {
+    margin: 10px 0px 10px 0px;
+    padding-bottom: 5px;
+    box-shadow: 0px 0px 10px black;
+    height: 100%;
+    text-align: center;
+}
+
+#item_summary {
+    margin: auto;
+}
+
+.submit {
+    background-color: #1D5135;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 5px black;
+    cursor: pointer;
+}
+
+#total_price {
+    color: #1D5135;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#title {
+    font-family: title1;
+    font-size: 90px;
+}
+
+#subtitle {
+    font-family: title1;
+    font-size: 30px;
+}
+
+#plant_title, #price, #quantity {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#price, #quantity {
+    font-weight: 200;
+    font-size: 16px;
+}
+
+h2 {
+    margin: 1px !important;
+}
+
+#total_price h2 {
+    font-weight: bold;
+}
+
+#description {
+    position: absolute;
+    left: 0px;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+img{
+    position: relative;
+    width: 100%;
+}
+
+html, body{
+    height: 100%;
+    min-height: 100%;
+}
+
+div {
+    /*    border: 1px solid black;*/
+}
