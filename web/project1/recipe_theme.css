@@ -1,0 +1,142 @@
+@font-face {
+  font-family: title1;
+  src: url(../fonts/white_wood.otf)
+}
+
+#colors {
+  /*    http://paletton.com/palette.php?uid=50N0F0kcglL4Zvw8Eq6eXhmkwen
+  */
+}
+
+.container-fluid {
+  max-width: 1200px;
+  background-color: black;
+  /*backup*/
+  background-image: url("../photos/rookie_cook/wood1.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  min-height: 100%;
+}
+
+#body {
+  box-shadow: 0px 3px 25px 10px black;
+  background: black;
+  border-radius: 0px 0px 15px 15px;
+  margin-bottom: 60px;
+}
+
+#header {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.0) 60%, rgba(255, 255, 255, 0.2) 100%), url("../photos/rookie_cook/fry1.jpg");
+  background-position: center;
+  /*Other Items*/
+  color: white;
+}
+
+#menu_item {}
+
+#center1 {
+  background: url(../photos/rookie_cook/pan1.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.0) 30%, rgba(255, 255, 255, 0.0) 60%, rgba(255, 255, 255, 0.4) 100%), url(../photos/rookie_cook/pan2.jpg);
+  background-position: center;
+}
+
+#center2 {
+  background: url(../photos/rookie_cook/grill2.png);
+  background: linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.0) 30%, rgba(255, 255, 255, 0.0) 60%, rgba(255, 255, 255, 0.2) 100%), url(../photos/rookie_cook/grill1.jpg);
+  background-position:top;
+}
+
+#center3 {
+  background: url(../photos/rookie_cook/spices4.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.0) 30%, rgba(255, 255, 255, 0.0) 60%, rgba(255, 255, 255, 0.4) 100%), url(../photos/rookie_cook/spices4.jpg);
+  background-position: top;
+}
+
+#header,
+#center1,
+#center2,
+#center3,
+#center4{
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0px 0px 15px 15px;
+  text-align: center;
+}
+
+.center {
+  background-color: #725629;
+  /*backup*/
+  padding: 15px;
+  font-size: 18px;
+}
+
+.center-middle {
+  /*    box-shadow: 0px 0px 8px black;*/
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #FBECD4;
+  background-color: rgba(251, 236, 212, 0.9);
+  border-radius: 5px;
+}
+
+#footer {
+  min-height: 200px;
+  background: #725629;
+  /*backup*/
+  background: linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.0) 30%, rgba(255, 255, 255, 1.0) 90%), url(../photos/rookie_cook/pan1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /*Other Items*/
+  color: white;
+}
+
+#item,
+#item_summary {
+  margin: 10px 0px 10px 0px;
+  padding-bottom: 5px;
+  box-shadow: 0px 0px 10px black;
+  height: 100%;
+  text-align: center;
+}
+
+#item_summary {
+  margin: auto;
+}
+
+#title {
+  font-family: title1;
+  font-size: 120px;
+}
+
+#subtitle {
+  font-family: title1;
+  font-size: 40px;
+}
+
+.subtitle {
+  font-family: title1;
+  font-size: 64px;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  margin: 1px !important;
+  text-shadow: 1px 1px 10px black;
+}
+
+img {
+  width: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
+div {
+  /*    border: 1px solid black;*/
+}
