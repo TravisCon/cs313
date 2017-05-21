@@ -1,8 +1,3 @@
-<?php
-include_once "item.php";
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,10 +10,16 @@ session_start();
   </head>
 
   <?php
-  //$dbconn = pg_connect("dbname=postgres //user=view_user password=view_pass");
-  $dbconn = pg_connect("dbname=postgres");
-  if (!$dbconn){
+  $dbconn = pg_connect("host=localhost dbname=postgres port=5432");
+  function pg_connection_string_from_database_url() {
+  extract(parse_url($_ENV["DATABASE_URL"]));
+  return "user=$user password=$pass host=$host dbname=" . substr($path, 1);
+  }
+  $pg_conn = pg_connect(pg_connection_string_from_database_url());
+  
+  if (!$pg_conn){
     echo "An error occurred.\n";
+    echo $_ENV["DATABASE_URL"];
     exit;
   }
   ?>
@@ -46,7 +47,7 @@ session_start();
           <h2 class="subtitle"> Recipe of the Month</h2>
           <div class="col-md-6 col-md-offset-3 center-middle">
             <?php
-            $recipes = pg_query($dbconn,
+            $recipes = pg_query($pg_conn,
                                 "SELECT name, description, photo_name
                                 FROM recipe
                                 WHERE name = 'Toast'");
