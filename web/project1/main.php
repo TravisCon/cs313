@@ -15,7 +15,8 @@ session_start();
   </head>
 
   <?php
-  $dbconn = pg_connect("dbname=postgres user=ta_user password=ta_pass");
+  //$dbconn = pg_connect("dbname=postgres //user=view_user password=view_pass");
+  $dbconn = pg_connect("dbname=postgres");
   if (!$dbconn){
     echo "An error occurred.\n";
     exit;

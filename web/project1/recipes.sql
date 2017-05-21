@@ -1,8 +1,13 @@
-/*
-* In postgres
-* CREATE USER ta_user WITH password 'ta_pass' NOCREATEDB;
-* GRANT SELECT ON scripture TO ta_user;
-*/
+CREATE USER view_user WITH password 'view_pass' NOCREATEDB;
+GRANT SELECT ON scripture TO ta_user;
+
+CREATE ROLE view_user;
+ALTER ROLE view_user WITH LOGIN PASSWORD 'view_pass' NOSUPERUSER NOCREATEDB NOCREATEROLE;
+CREATE DATABASE database_name OWNER view_user;
+REVOKE ALL ON DATABASE database_name FROM PUBLIC;
+GRANT CONNECT ON DATABASE database_name TO database_user;
+GRANT ALL ON DATABASE database_name TO database_user;
+
 DROP SCHEMA public CASCADE;
 CREATE SCHEMA public;
 
