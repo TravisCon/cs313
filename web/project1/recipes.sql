@@ -1,6 +1,3 @@
-CREATE USER view_user WITH password 'view_pass' NOCREATEDB;
-GRANT SELECT ON scripture TO ta_user;
-
 CREATE ROLE view_user;
 ALTER ROLE view_user WITH LOGIN PASSWORD 'view_pass' NOSUPERUSER NOCREATEDB NOCREATEROLE;
 CREATE DATABASE database_name OWNER view_user;

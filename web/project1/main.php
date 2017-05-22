@@ -10,16 +10,15 @@
   </head>
 
   <?php
-  $dbconn = pg_connect("host=localhost dbname=postgres port=5432");
   function pg_connection_string_from_database_url() {
   extract(parse_url($_ENV["DATABASE_URL"]));
   return "user=$user password=$pass host=$host dbname=" . substr($path, 1);
   }
   $pg_conn = pg_connect(pg_connection_string_from_database_url());
+  //$pg_conn = pg_connect("dbname=postgres user=postgres password=cangetin");
   
   if (!$pg_conn){
-    echo "An error occurred.\n";
-    echo $_ENV["DATABASE_URL"];
+    echo "PG_conn: An error occurred.\n";
     exit;
   }
   ?>
@@ -67,7 +66,7 @@
           <div class="col-md-12 center-middle">
             <?php
 
-            $recipes = pg_query($dbconn,
+            $recipes = pg_query($pg_conn,
                                 "SELECT name, description, photo_name
       FROM recipe
       ORDER BY my_date
