@@ -1,15 +1,18 @@
+var speed1 = 100;
+var speed2 = 200;
+
 $(document).ready(function () {
-    $('.preview').hover(function(){
-        $(this).find("img").animate({
-            opacity: "0.3"
-        }, 'fast');
-    }, function(){
-        $(this).find("img").animate({
-            opacity: "1.0"
-        }, 'fast');
-    });
-    
-    $("#confirm").click(function(){
-        $("#form").submit();
-    });
+  $('#header > div > a').hover(function(){
+    $('a > h2').animate({
+      fontSize: "+=2"
+    }, speed1);
+  }, function(){
+    $('a > h2').animate({
+      fontSize: "-=2"
+    }, speed1);
+  });
+
+  $("#confirm").click(function(){
+    $("#form").submit();
+  });
 });
