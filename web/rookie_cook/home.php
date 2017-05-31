@@ -1,5 +1,6 @@
 <?php
 session_start();
+require "db_connect.php";
 ?>
 
 <!DOCTYPE html>
@@ -12,27 +13,11 @@ session_start();
     include "head_links.php";
     ?>
   </head>
-
-  <?php
-  function pg_connection_string_from_database_url() {
-    extract(parse_url($_ENV["DATABASE_URL"]));
-    return "user=$user password=$pass host=$host dbname=" . substr($path, 1);
-  }
-  
-  $pg_conn = pg_connect(pg_connection_string_from_database_url());
-  //$pg_conn = pg_connect("dbname=postgres user=postgres password=cangetin");
-
-  $_SESSION["pg_conn_url"] = $pg_conn;
-  if (!$pg_conn){
-    echo "PG_conn: An error occurred.\n";
-    exit;
-  }
-  ?>
   <body class="container-fluid">
     <div class="row">
       <div class="col-md-12" id="body">
         <?php
-        $currentPage = "Recipes by the people, for the people";
+        $currentPage = "Recipes by the people,<br> for the people";
         include "header.php";
         ?>
         <div class="row center" id="center1">
@@ -41,7 +26,7 @@ session_start();
 
             <form action="search.php" method="get">
               <div class="form-group">
-                <label type="">Keywords (has to be literal strings at the moment)</label>
+                <label type="">Keywords</label>
                 <input type="text" class="form-control" name="search" id="search">
               </div>
               <button type="submit" class="btn btn-default">Search</button>
@@ -50,30 +35,30 @@ session_start();
         </div>
         <div class="row center" id="center2">
           <h2 class="subtitle"> Recipe of the Month</h2>
-          <div class="col-md-6 col-md-offset-3 center-middle">
+          <div class="col-md-6 col-md-offset-3">
             <?php
             $recipes = pg_query($pg_conn,
                                 "SELECT id, name, description, photo_name
                                 FROM recipe
                                 WHERE name = 'Toast'");
-            while ($row = pg_fetch_row($recipes)) {
-              echo "<a href='recipe.php?id=".$row[0]."'>";
-              echo "<div class='col-md-12'>";
-              echo "<img class='img-responsive' src='../photos/rookie_cook/recipes/$row[3]'>";
-              echo "<span style='font-weight: bold;'>$row[1]</span>";
-              echo "<br />\n";
-              echo $row[2];
-              echo "</div>";
-              echo "</a>";
-            }
+            $row = pg_fetch_row($recipes);
+            echo "<div class='col-md-12'>";
+            echo "<a href='recipe.php?id=".$row[0]."'>";
+            echo "<div class='preview'>";
+            echo "<img class='img-responsive img-rounded' src='../photos/rookie_cook/recipes/$row[3]'>";
+            echo "<span style='font-weight: bold;'>$row[1]</span>";
+            echo "<br />\n";
+            echo $row[2];
+            echo "</div>";
+            echo "</a>";
+            echo "</div>";
             ?>         
           </div>
         </div>
         <div class="row center" id="center3">
           <h2 class="subtitle">Newest Recipes</h2>
-          <div class="col-md-12 center-middle">
+          <div class="col-md-12">
             <?php
-
             $recipes = pg_query($pg_conn,
                                 "SELECT id, name, description,
                                 photo_name
@@ -85,14 +70,16 @@ session_start();
               exit;
             }
             while ($row = pg_fetch_row($recipes)) {
+              echo "<div class='col-md-3 col-sm-4 col-xs-6'>";
               echo "<a href='recipe.php?id=".$row[0]."'>";
-              echo "<div class='col-md-4'>";
-              echo "<img class='img-responsive' src='../photos/rookie_cook/recipes/$row[3]'>";
+              echo "<div class='col-md-12 preview'>";
+              echo "<img class='img-responsive img-rounded' src='../photos/rookie_cook/recipes/$row[3]'>";
               echo "<span style='font-weight: bold;'>$row[1]</span>";
               echo "<br />\n";
               echo $row[2];
               echo "</div>";
               echo "</a>";
+              echo "</div>";
             }
             ?>
 

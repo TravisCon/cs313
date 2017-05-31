@@ -27,8 +27,8 @@
 }
 
 #header {
-  background-image: linear-gradient(rgba(255, 242, 204, 0.0) 60%, rgba(255, 242, 204, 0.2) 100%), url("../photos/rookie_cook/fry1.jpg");
-  background-position: center;
+  background-image: linear-gradient(rgba(255, 242, 204, 0.0) 60%, rgba(255, 242, 204, 0.2) 100%), url("../photos/rookie_cook/pan2.jpg");
+  background-position: bottom;
   /*Other Items*/
   color: white;
 }
@@ -37,7 +37,7 @@
 
 #center1 {
   background: url(../photos/rookie_cook/pan2.jpg);
-  background: linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.0) 50px, rgba(255, 242, 204, 0.0) 60%, rgba(255, 242, 204, 0.4) 100%), url(../photos/rookie_cook/pan2.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.0) 50px, rgba(255, 242, 204, 0.0) 60%, rgba(255, 242, 204, 0.4) 100%), url(../photos/rookie_cook/fry1.jpg);
   background-position: center;
 }
 
@@ -73,10 +73,11 @@
 
 .center-middle {
   /*    box-shadow: 0px 0px 8px black;*/
+  box-shadow: 0px 0px 10px black;
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: #FBECD4;
-  background-color: rgba(251, 236, 212, 0.9);
+  background-color: rgba(251, 236, 212, 0.8);
   border-radius: 5px;
 }
 
@@ -92,23 +93,33 @@
   color: white;
 }
 
-#item,
-#item_summary {
-  margin: 10px 0px 10px 0px;
-  padding-bottom: 5px;
+.preview {
+  padding: 5px !important;
+  background-color: #FBECD4;
+  background-color: rgba(251, 236, 212, 0.9);
+  border-radius: 5px;
   box-shadow: 0px 0px 10px black;
   height: 100%;
   text-align: center;
 }
 
-#item_summary {
-  margin: auto;
+#full-recipe {
+  padding: 5px !important;
+  background-color: #FBECD4;
+  background-color: rgba(251, 236, 212, 0.8);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px black;
+  height: 100%;
+  text-align: center;
 }
 
 #title {
   font-family: title1;
   font-size: 120px;
-  margin-bottom: -20px !important;
+  line-height: 85%;
+  letter-spacing: -7px;
+/*  margin-top: -10px !important;*/
+/*  margin-bottom: -20px !important;*/
 }
 
 #subtitle {
@@ -119,6 +130,12 @@
 .subtitle {
   font-family: title1;
   font-size: 64px;
+  color: white;
+}
+
+.loginTitle {
+  font-family: title1;
+  font-size: 30px;
   color: white;
 }
 
