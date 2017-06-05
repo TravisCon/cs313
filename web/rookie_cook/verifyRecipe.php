@@ -4,8 +4,11 @@ require "db_connect.php";
 
 if (is_null($_SESSION['userName'])){
   header("Location: login.php");
-  exit(); 
+  exit();
 }
+$id = $_SESSION["id"];
+
+$_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
 $photoDirectory = "../photos/rookie_cook/recipes/";
 $photoFile = $photoDirectory . basename($_FILES["photoName"]["name"]);
@@ -28,7 +31,7 @@ if (file_exists($photoFile)) {
 }
 
 //Check size 600kb limit
-if ($_FILES["photoName"]["size"] > 600000) {
+if ($_FILES["photoName"]["size"] > 1000000) {
   echo "Sorry, your file is too large.";
   $validFile = 0;
 }
@@ -51,7 +54,6 @@ if ($validFile == 0) {
   }
 }
 
-$id = $_SESSION["id"];
 $name  = $_POST["name"];
 $photoName = basename($_FILES["photoName"]["name"]);
 $description = $_POST["description"];
@@ -70,7 +72,7 @@ if (is_null($photoName) || is_null($ingredients) || is_null($steps)) {
 }
   
 
-if ($valid) {
+if ($valid && $validFile) {
   $recipeInsert = pg_query($pg_conn,
            "INSERT INTO recipe(author_id, name, description, total_time, photo_name)
            VALUES ('$id', '$name', '$description', '$totalTime', '$photoName') RETURNING id");
@@ -100,11 +102,9 @@ if ($valid) {
   }
   echo $stepQuery;
   pg_query($pg_conn, $stepQuery);
+  header("Location: account.php");
 } else {
   header("Location: account.php?error=true");
-  exit();  
 }
-
-header("Location: account.php");
 exit();
 ?>

@@ -2,7 +2,9 @@
 session_start();
 require "db_connect.php";
 
-$search = $_GET['search'];
+//$_GET = filter_input(INPUT_POST, FILTER_SANITIZE_STRING);
+
+$search = filter_var($_GET['search'], FILTER_SANITIZE_STRING);
 $recipes = pg_query($pg_conn,
                     "SELECT id, name, description, photo_name
                     FROM recipe

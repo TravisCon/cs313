@@ -2,6 +2,8 @@
 session_start();
 require "db_connect.php";
 
+$_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
 if (is_null($_SESSION['userName'])){
   header("Location: login.php");
   exit(); 

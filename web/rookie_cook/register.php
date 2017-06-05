@@ -25,28 +25,28 @@ require "db_connect.php";
           <div class="col-md-6 col-md-offset-3 center-middle">
             <?php 
             if (isset($_GET["userName"])) {
-              echo "<div class='error'>Username is in use</span><br><div>";
+              echo "<div class='error'>Username is in use<br></div>";
             }
             if (isset($_GET["email"])) {
-              echo "<div class='error'>Email is in use</span><br><div>";
+              echo "<div class='error'>Email is in use<br></div>";
             }
             ?>
-            <form action="verifyRegister.php" method="post" id="form">
+            <form action="verifyRegister.php" method="post" id="registerForm">
               <div class="form-group">
                 <label>Username</label>
-                <input type="text" class="form-control" name="userName">
+                <input type="text" class="form-control" name="userName" required>
               </div>
-              <div class="form-group">
+              <div class="form-group password">
                 <label>Password</label>
-                <input type="password" class="form-control" name="password" id="pass1">
+                <input type="password" class="form-control" name="password" id="pass1" required>
               </div>
-              <div class="form-group">
+              <div class="form-group password">
                 <label>Confirm Password</label>
-                <input type="password" class="form-control" name="confirmPass" id="pass2">
+                <input type="password" class="form-control" name="confirmPass" id="pass2" required>
               </div>
               <div class="form-group">
                 <label>Email</label>
-                <input type="text" class="form-control" name="email">
+                <input type="text" class="form-control" name="email" required>
               </div>
               <div class="error" id="passError" hidden>Passwords do not match</div>
               <button type="submit" class="btn btn-default" id="submit">Register</button>

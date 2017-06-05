@@ -15,24 +15,25 @@
     <?php
     $userName = $_SESSION["userName"];
     if (isset($userName)){
-      echo "<h2 class=\"loginTitle link\" id=\"userName\">";
-      echo "<a href=\"account.php\">";
-      echo "Welcome <span id='username'>{$userName}</span>";
-      echo '</a>';
-      echo "</h2>";
+      echo "<div class='account'>";
+      echo "<a href='account.php' class='link2'>";
+      echo "<h2 class='welcome' id='userName'>";
+      echo "Welcome</h2>";
+      echo "<h2 id='username'>{$userName}</h2></a>";
       echo "<form action='logout.php'>";
       echo "<button class='btn btn-default' type='submit'>Logout</button>";
       echo "</form>";
+      echo "</div>";
     } else {
+      echo '<div class="col-xs-12 account">';
       echo '<div class="col-md-12 col-xs-6">';
       echo '<a href="register.php">';
       echo '<h2 class="link loginTitle">Register</h2>';
       echo '<br></a></div>';
-      
       echo '<div class="col-md-12 col-xs-6">';
       echo '<a href="login.php">';
       echo '<h2 class="link loginTitle">Login</h2>';
-      echo '</a></div>';
+      echo '</a></div></div>';
     }
     ?>
   </div>

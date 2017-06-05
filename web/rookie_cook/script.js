@@ -1,6 +1,19 @@
 var speed1 = 100;
 var speed2 = 200;
 
+function setPassError(){
+  $("#passError").show();
+  $(".password").addClass("has-error has-feedback");
+  $("#submit").attr('disabled','disabled');
+}
+
+function setPassValid(){
+  $("#passError").hide();
+  $(".password").removeClass("has-error has-feedback");
+  $(".password").addClass("has-success has-feedback");
+  $("#submit").removeAttr('disabled');
+}
+
 $(document).ready(function () {
   //Use to make links look interactive
   $('.link').hover(function(){
@@ -12,6 +25,7 @@ $(document).ready(function () {
       letterSpacing: '+=1'
     }, speed1);
   });
+
   //Make previews look interactive
   $('.preview').hover(function(){
     $(this).animate({
@@ -24,18 +38,26 @@ $(document).ready(function () {
   });
 
   $('#addRecipeButton').click(function(){
+    $(this).slideUp('fast');
     $('#newRecipeForm').slideDown('medium');
-    $(this).slideUp('medium');
   });
 
   //Check password equivalence
-  $("#form").submit(function(){
+  $("#registerForm").submit(function(){
     if ($("#pass2").val() !== $("#pass1").val()) {
-      $("#passError").show();
+      setPassError();
       return false;
     } else {
-      $("#passError").hide();
+      setPassValid();
       return true;
+    }
+  });
+
+  $("#pass2").focusout(function(){
+    if ($("#pass2").val() !== $("#pass1").val()) {
+      setPassError();
+    } else {
+      setPassValid();
     }
   });
 
@@ -72,7 +94,7 @@ $(document).ready(function () {
       });
     });
   });
-  
+
   $(".delete").click(function(){
     var recipeId = $("#recipeId").val();
     $.post('deleteRecipe.php', {recipeId : recipeId}, function(data){

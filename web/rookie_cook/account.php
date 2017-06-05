@@ -29,10 +29,19 @@ if (is_null($userName)) {
         include "header.php";
         ?>
         <div class="row center" id="center1">
+          <?php 
+          $error = (isset($_GET['error']));
+          ?>
           <h2 class="subtitle">Submit a recipe</h2>
-          <button id="addRecipeButton" class="btn btn-default">Click to add a new recipe</button>
-          <div class="col-md-8 col-md-offset-2 center-middle" id="newRecipeForm" hidden>
+          <button id="addRecipeButton" class="btn btn-default"
+                  <?php if ($error) {echo " style='display: none;'";}?>
+                  >Click to add a new recipe
+          </button>
+          <div class="col-md-8 col-md-offset-2 center-middle" id="newRecipeForm" 
+               <?php if (!$error) {echo "hidden";}?> 
+               >
             <form action="verifyRecipe.php" method="post" enctype="multipart/form-data" id="recipeForm">
+              <div class="error" <?php if (!$error) {echo " hidden";}?>>Error processing request: Check image file</div>
               <div class="form-group">
                 <label for="name">Recipe Name</label>
                 <input type="text" class="form-control" id="name" name="name" required>
@@ -42,9 +51,10 @@ if (is_null($userName)) {
                 <textarea class="form-control" name="description" id="description" rows="3" placeholder="Write a brief description of this recipe, and any side notes" required></textarea>
               </div>  
               <div class="row form-group">
-                <div class="col-md-6 col-md-offset-3 col-xs-12">
-                  <label class="btn btn-default btn-block"> Upload photo
+                <div class="col-xs-12">
+                  <label class="btn btn-default btn-block"> Upload photo (less than 1MB)
                     <br>
+                    Drag Photo Here
                     <!--<span id="photoLabel"></span>-->
                     <input type="file" class="btn btn-primary btn-block" name="photoName" id="photoName" required>
                   </label>

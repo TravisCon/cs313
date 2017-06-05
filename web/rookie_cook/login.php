@@ -25,7 +25,7 @@ require "db_connect.php";
           <div class="col-md-6 col-md-offset-3 center-middle">
             <?php
             if (isset($_GET["error"])) {
-              echo "<div class='error'>Incorrect username or password</span><br><div>";
+              echo "<div class='error'>Incorrect username or password</div><br>";
             }
             ?>
             <form action="verifyLogin.php" method="post">
