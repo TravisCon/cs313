@@ -63,8 +63,8 @@ require "db_connect.php";
                                 "SELECT id, name, description,
                                 photo_name
                                 FROM recipe
-                                ORDER BY my_date
-                                LIMIT 5");
+                                ORDER BY my_date DESC
+                                LIMIT 8");
             if (!$recipes) {
               echo "An error occurred.\n";
               exit;
