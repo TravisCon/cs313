@@ -7,6 +7,10 @@ app.use(express.static(__dirname + "/public"));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
+app.get('/', function(require, response){
+  response.render("mail");
+});
+
 app.get('/order_details', handleSubmit);
 
 app.listen(app.get('port'), function(){
