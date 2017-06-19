@@ -1,7 +1,7 @@
 {
-  "name": "node-mail",
+  "name": "node-rock-app",
   "version": "1.0.0",
-  "description": "Mail price calculator",
+  "description": "Ultimate Rock Paper Scissor game",
   "engines": {
     "node": "6.10.2"
   },
